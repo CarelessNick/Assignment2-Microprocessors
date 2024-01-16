@@ -5,9 +5,11 @@ Read the sensors and store in our telemetry data packet
 #include "mbed.h"
 #include "sensors.h"
 #include "config.h"
+#include "display.h"
 
 void readSensorsTask()
 {
+    message_t myMessage;
     DigitalOut vcc(VCC);
     DigitalOut gnd(GND);
     AnalogIn tempVolts(THERMISTOR);
@@ -32,7 +34,9 @@ void readSensorsTask()
         float temperatureC = (float32_t)(((1.0 / stEqn) + ABSOLUTE_ZERO) + 0.05);
 
         //printf("The temp Voltage is: %2.2f \n", temperatureVoltage);  //prints temp voltage
-        printf("The Temperature is: %2.2f C \n", temperatureC);  //prints temperature
+        sprintf( myMessage.buffer, "The Temperature is: %2.2f C \n", temperatureC);  //prints temperature
+        myMessage.displayType = 1;
+        queueMessage(myMessage);
         ThisThread::sleep_for(SENSOR_RATE);
     }
 }
