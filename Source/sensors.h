@@ -16,7 +16,6 @@
 #define B_COEFF                          (float)(0.000248772f)
 /* C constant of NCP18XH103F03RB thermistor is */
 #define C_COEFF                          (float)(0.0000002041094f)
-
 /* Zero Kelvin in degree C */
 #define ABSOLUTE_ZERO                    (float)(-273.15)
 

@@ -14,7 +14,8 @@ int main()
 {
     statusHandle.start(callback(statusTask));
     sensorHandle.start(callback(readSensorsTask));
-    while (true) {
+    while (true)
+    {
         ThisThread::sleep_for(100);
     }
 }
