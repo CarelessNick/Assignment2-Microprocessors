@@ -7,6 +7,7 @@ typedef struct
     int displayType; //This lets display task know the requester (temp, light, etc)
 } message_t;
 
-void queueMessage(message_t);
 void displayTask();
+void queueMessage(message_t);
+
 #endif
