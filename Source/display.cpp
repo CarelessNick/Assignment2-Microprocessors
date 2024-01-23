@@ -4,6 +4,7 @@ Thread to take messages from the other modules and display them on the screen or
 #include "mbed.h"
 #include "display.h"
 #include "config.h"
+#include "vt100.h"
 #include <string.h>
 
 //char* strcpy(char*, char*);  // fool syntax checker
@@ -23,11 +24,26 @@ void queueMessage(message_t msg)
 
 void displayTask() 
 {
+    CLS;
+    ThisThread::sleep_for(10);
+   
     while (true) {
         osEvent evt = queue.get();
         if (evt.status == osEventMessage) {
             message_t *message = (message_t*)evt.value.p;
-            printf("%d %s\n", message->displayType, message->buffer);
+            switch(message->displayType)
+            {
+                case TEMP_DISPLAY: 
+                {
+                    printf("\033[1:20H CITY1082 Telemetry");
+                    printf("\033[3;20H");
+                    printf("%s", message->buffer);
+                    break;
+                }
+                default:
+                    break;
+            }
+        // printf("%d %s\n", message->displayType, message->buffer);
             mpool.free(message);
         }
         ThisThread::sleep_for(10);

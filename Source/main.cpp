@@ -11,6 +11,7 @@ Each of the RTOS modules will be started by main and then main will sleep foreve
 Thread statusHandle;
 Thread sensorHandle;
 Thread displayHandle;
+
 // main() runs in its own thread in the OS
 int main()
 {

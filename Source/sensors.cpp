@@ -35,7 +35,7 @@ void readSensorsTask()
 
         //printf("The temp Voltage is: %2.2f \n", temperatureVoltage);  //prints temp voltage
         sprintf( myMessage.buffer, "The Temperature is: %2.2f C \n", temperatureC);  //prints temperature
-        myMessage.displayType = 1;
+        myMessage.displayType = TEMP_DISPLAY;
         queueMessage(myMessage);
         ThisThread::sleep_for(SENSOR_RATE);
     }
