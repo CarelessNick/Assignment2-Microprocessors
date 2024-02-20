@@ -1,6 +1,7 @@
 /*
-Controls outputs from the thing for lights and heating
-*/
+*Controls outputs from the thing for lights and heating
+*
+
 #include "config.h"
 #include "actuators.h"
 #include "display.h"
@@ -49,3 +50,4 @@ void doActuations()
             ThisThread::sleep_for(100); 
     }
 }
+*/

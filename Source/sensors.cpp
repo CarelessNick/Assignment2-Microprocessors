@@ -60,7 +60,7 @@
 //         printf("%d %s\n", myMessage.displayType, myMessage.buffer);
          queueMessage(myMessage);
          ThisThread::sleep_for(10);
-         float lightLevel = lightVolts.read() * 100;
+         float lightLevel = ( 1 - lightVolts.read()) * 100;
          sprintf( myMessage.buffer, "%3.1f%c ", lightLevel, '%');
          myMessage.displayType = LIGHT_DISPLAY;
 //         printf("%d %s\n", myMessage.displayType, myMessage.buffer);
