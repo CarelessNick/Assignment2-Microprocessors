@@ -19,6 +19,7 @@ int main()
     statusHandle.start(callback(statusTask));
     sensorHandle.start(callback(readSensorsTask));
     displayHandle.start(callback(displayTask));
+    actuator
     while (true) {
         ThisThread::sleep_for(100);
     }
