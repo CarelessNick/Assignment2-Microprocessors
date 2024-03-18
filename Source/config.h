@@ -28,7 +28,25 @@
 #define CONNECTED (uint8_t) (10)
 #define MESSAGES_SENT (uint8_t)(11)
 #define MESSAGES_RCVD (uint8_t)(12)
-#define DEAD_BAND_L 10
-#define DEAD_BAND_T 2
+#define STATUS_DISPLAY (uint8_t)(13)
+#define DEAD_BAND_L (float)(10.0f)
+#define DEAD_BAND_T (float)(2.0f)
+
+/* MQTT configuration data
+ *
+ * Set your unique THING_NAME mine is asrThingy
+*/
+
+#define BROKER          "192.168.1.176"
+#define PORT            1883
+
+#define THING_NAME      "asrThingy"
+
+//#define TEMPERATURE_TOPIC   "/temperatureC"
+//#define LIGHT_LEVEL_TOPIC   "/lightlevel"
+#define ANNOUNCE_TOPIC      "/announce"
+#define LIGHT_SET_TOPIC "asrThingy/lightSet"
+#define TEMP_SET_TOPIC "asrThingy/tempSet"
+
 
 #endif
