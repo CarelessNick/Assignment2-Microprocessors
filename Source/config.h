@@ -40,13 +40,13 @@
 #define BROKER          "192.168.1.176"
 #define PORT            1883
 
-#define THING_NAME      "Nicks Board"
+#define THING_NAME      "NicksBoard"
 
 //#define TEMPERATURE_TOPIC   "/temperatureC"
 //#define LIGHT_LEVEL_TOPIC   "/lightlevel"
 #define ANNOUNCE_TOPIC      "/announce"
-#define LIGHT_SET_TOPIC "asrThingy/lightSet"
-#define TEMP_SET_TOPIC "asrThingy/tempSet"
+#define LIGHT_SET_TOPIC "NicksBoard/lightSet"
+#define TEMP_SET_TOPIC "NicksBoard/tempSet"
 
 
 #endif

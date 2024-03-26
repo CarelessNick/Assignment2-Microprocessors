@@ -58,7 +58,6 @@ void displayPanel() {
     ThisThread::sleep_for(1);
     HOME;
     ThisThread::sleep_for(1);
-    
     printf("┌──────────────────────────────────────────────────────────────────────┐\n");
     printf("│                   CITY1082 Telemetry                                 │\n");
     printf("├──────────────────────┬───────────┬───────────────────────┬───────────┤\n");

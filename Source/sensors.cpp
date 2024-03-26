@@ -6,6 +6,7 @@
  #include "sensors.h"
  #include "config.h"
  #include "display.h"
+#include "wifi.h"
 
  struct myData{
      float tempC;
@@ -59,13 +60,15 @@
         myMessage.displayType = TEMP_DISPLAY;
 //        printf("%d %s\n", myMessage.displayType, myMessage.buffer);
         queueMessage(myMessage);
+        sendPub(TEMPERATURE_TOPIC, myD.tempC);
         ThisThread::sleep_for(10);
         float lightLevel = (1 - lightVolts.read()) * 100;
         myD.lightL = lightLevel;
         sprintf( myMessage.buffer, "%3.1f%c   ", lightLevel, '%');
         myMessage.displayType = LIGHT_DISPLAY;
 //        printf("%d %s\n", myMessage.displayType, myMessage.buffer);
-        queueMessage(myMessage);         
+        queueMessage(myMessage);  
+        sendPub(LIGHT_LEVEL_TOPIC, myD.lightL);       
 
          ThisThread::sleep_for(SENSOR_RATE);
      }
